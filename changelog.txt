@@ -1,4 +1,18 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.1.0
+Date: 3 November 2024
+  Features:
+    - Added Settings page.
+      - Order the log from newest or oldest.
+      - Configure number of items listed per page.
+      - Toggle logging on/off.
+      - Button to delete the currently logged data.
+    - Added shortcut button to open/close the Handcrafting Log
+    - Added button to jump straight to a page number.
+  Changed:
+    - Updated for Factorio 2.0
+
+---------------------------------------------------------------------------------------------------
 Version: 1.0.0
 Date: 30 October 2020
   Features:

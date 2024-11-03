@@ -4,7 +4,7 @@ function export_raw(data, player_index, requester_index)
     local player_name = game.get_player(player_index).name
     local path = "handcrafting_log_" .. player_name .. "_raw.csv"
 
-    game.write_file(path, "tick,item,recipe\n", false, requester_index)
+    helpers.write_file(path, "tick,item,recipe\n", false, requester_index)
 
     local chunk_data = ""
     local chunk_counter = 0
@@ -18,12 +18,12 @@ function export_raw(data, player_index, requester_index)
         chunk_data = chunk_data .. line
         chunk_counter = chunk_counter + 1
         if chunk_counter == 100 then
-            game.write_file(path, chunk_data, true, requester_index)
+            helpers.write_file(path, chunk_data, true, requester_index)
             chunk_counter = 0
             chunk_data = ""
         end
     end
-    game.write_file(path, chunk_data, true, requester_index)
+    helpers.write_file(path, chunk_data, true, requester_index)
     chunk_data = ""
 
     game.get_player(requester_index).print("Exported handcrafting data to: " .. path)
@@ -33,7 +33,7 @@ function export_smart(data, player_index, requester_index)
     local player_name = game.get_player(player_index).name
     local path = "handcrafting_log_" .. player_name .. "_queue.csv"
 
-    game.write_file(path, "tick,duration,count,item,recipe\n", false, requester_index)
+    helpers.write_file(path, "tick,duration,count,item,recipe\n", false, requester_index)
 
     local chunk_data = ""
     local chunk_counter = 0
@@ -53,12 +53,12 @@ function export_smart(data, player_index, requester_index)
         chunk_data = chunk_data .. line
         chunk_counter = chunk_counter + 1
         if chunk_counter == 100 then
-            game.write_file(path, chunk_data, true, requester_index)
+            helpers.write_file(path, chunk_data, true, requester_index)
             chunk_counter = 0
             chunk_data = ""
         end
     end
-    game.write_file(path, chunk_data, true, requester_index)
+    helpers.write_file(path, chunk_data, true, requester_index)
     chunk_data = ""
 
     game.get_player(player_index).print("Exported handcrafting data to: " .. path)
@@ -68,7 +68,7 @@ function export_statistics(data, player_index, requester_index)
     local player_name = game.get_player(player_index).name
     local path = "handcrafting_log_" .. player_name .. "_statistics.csv"
 
-    game.write_file(path, "duration,count,item,recipe\n", false, requester_index)
+    helpers.write_file(path, "duration,count,item,recipe\n", false, requester_index)
 
     local chunk_data = ""
     local chunk_counter = 0
@@ -83,12 +83,12 @@ function export_statistics(data, player_index, requester_index)
         chunk_data = chunk_data .. line
         chunk_counter = chunk_counter + 1
         if chunk_counter == 100 then
-            game.write_file(path, chunk_data, true, requester_index)
+            helpers.write_file(path, chunk_data, true, requester_index)
             chunk_counter = 0
             chunk_data = ""
         end
     end
-    game.write_file(path, chunk_data, true, requester_index)
+    helpers.write_file(path, chunk_data, true, requester_index)
     chunk_data = ""
 
     game.get_player(player_index).print("Exported handcrafting data to: " .. path)
